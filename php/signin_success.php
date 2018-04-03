@@ -25,5 +25,25 @@ Welcome!! <?php echo $session_user;?><br/>
 	<form action="./signout.php" method="post">
 		<input type="submit" name="submit" value="Sign out">
 	</form>
+	
+	
+	<?php 
+	// display category
+	function display_category() {
+		global $mysqli;
+		$query = "SELECT DISTINCT category FROM `tb_item`";
+		$result = $mysqli->query($query);
+		if ( $row_cnt = $result->num_rows >=1 ) {
+			echo "Choose the category:<ul>";
+			while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+				echo "<li><a href=item.php?category=".$row['category'].">".$row['category']."</a></li>"; // what item.php mean? ; I add </a>;
+			}
+			echo "</ul>";
+		} else {
+			echo "Sorry, no items available.";
+		}
+	}
+
+	 ?>
 </body>
 </html>

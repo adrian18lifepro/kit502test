@@ -5,6 +5,7 @@
 	<title>Home page</title>
 </head>
 <body>
+	
 	<h2>Welcome to E-shop</h2>
 	<h3>You can create an account here here</h3>
 	<div class="login">
